@@ -18,13 +18,41 @@
 
 	"Changes": [
 
+		// {
+		// 	"Action": "Include",
+		// 	"FromFile": "Assets/paper.json",
+		// 	// "When": {
+		// 	// 	"HasWalletItem |contains=DwarvishTranslationGuide": true,
+		// 	// }
+		// },
+
+
 		{
-			"Action": "Include",
-			"FromFile": "Assets/paper.json",
-			// "When": {
-			// 	"HasWalletItem |contains=DwarvishTranslationGuide": true,
-			// }
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Objects",
+			"FromFile": "Assets/paper.png"
 		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_paper": {
+					"Name": "{{ModId}}_paper",
+					"DisplayName": "{{i18n:Si.paper.name}}",
+					"Description": "{{i18n:Si.paper.desc}}",
+					"Texture": "Mods/{{ModId}}/Objects",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 5,
+					"SpriteIndex": 0,
+					"Edibility": -300,
+					"IsDrink": false,
+					"Buffs": null,
+					"CustomFields": null
+				}
+			}
+		}
 
 	]
 

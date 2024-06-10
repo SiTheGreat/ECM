@@ -5,7 +5,7 @@
 		// Image
 		{
 			"Action": "Load",
-			"Target": "Mods/{{ModId}}/Objects/paper",
+			"Target": "Mods/{{ModId}}/Objects",
 			"FromFile": "Assets/paper.png"
 		},
 
@@ -15,9 +15,9 @@
 			"Entries": {
 				"{{ModId}}_paper": {
 					"Name": "{{ModId}}_paper",
-					"DisplayName": "{{Si.paper.name}}",
-					"Description": "{{Si.paper.desc}}",
-					"Texture": "Mods/{{ModId}}/Objects/paper",
+					"DisplayName": "{{i18n:Si.paper.name}}",
+					"Description": "{{i18n:Si.paper.desc}}",
+					"Texture": "Mods/{{ModId}}/Objects",
 					"Type": "Basic",
 					"Category": -26,
 					"Price": 5,
