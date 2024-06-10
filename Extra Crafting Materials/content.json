@@ -1,0 +1,33 @@
+{
+
+	"Format": "2.0.0",
+
+	// Config //////////////////////////////////////////////////////////
+
+	"ConfigSchema":{
+
+		"SunSched": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Description."
+		},
+
+	},
+
+	// Content //////////////////////////////////////////////////////////
+
+	"Changes": [
+
+		{
+			"Action": "Include",
+			"FromFile": "Assets/paper.json",
+			// "When": {
+			// 	"HasWalletItem |contains=DwarvishTranslationGuide": true,
+			// }
+		},
+
+	]
+
+	// End //////////////////////////////////////////////////////////
+
+}

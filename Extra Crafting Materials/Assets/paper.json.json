@@ -1,0 +1,37 @@
+{
+
+	"Changes": [
+
+		// Image
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Objects/paper",
+			"FromFile": "Assets/paper.png"
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_paper": {
+					"Name": "{{ModId}}_paper",
+					"DisplayName": "{{Si.paper.name}}",
+					"Description": "{{Si.paper.desc}}",
+					"Texture": "Mods/{{ModId}}/Objects/paper",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 5,
+					"SpriteIndex": 0,
+					"Edibility": -300,
+					"IsDrink": false,
+					"Buffs": null,
+					"CustomFields": null
+				}
+			}
+		}
+
+	]
+
+	// End //////////////////////////////////////////////////////////
+
+}
