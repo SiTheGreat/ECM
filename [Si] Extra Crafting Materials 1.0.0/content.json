@@ -1,0 +1,839 @@
+{
+
+	"Format": "2.0.0",
+
+	// Config //////////////////////////////////////////////////////////
+
+	"ConfigSchema":{
+
+		"AnchortoChain": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle an Anchor into a Chain."
+		},
+
+		"IrontoChain": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can loom an Iron Bar into a Chain."
+		},
+
+		"ShardstoGlass": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle Glass Shards into Glass."
+		},
+
+		"GlassestoGlass": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can furnace Broken Glasses into Glass."
+		},
+
+		"ObsidiantoGlass": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can furnace Obsidian into Glass."
+		},
+
+		"BonestoGlue": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can furnace Bone Fragments into Glue."
+		},
+
+		"SaptoGlue": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can furnace Sap into Glue."
+		},
+
+		"ScrollstoPaper": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle Dwarf Scrolls into Paper."
+		},
+
+		"WoodtoPaper": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can bone mill Wood into Paper."
+		},
+
+		"HaytoRope": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can loom Hay into Rope."
+		},
+
+		"JellytoRope": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can loom Jelly into Rope."
+		},
+
+		"MosstoString": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can loom Moss into String."
+		},
+
+		"FibertoString": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can loom Fiber into String."
+		},
+
+		"DrumtoLeather": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle Ancient Drum into Leather."
+		},
+
+		"BugtoLeather": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can dehydrate Bug Meat into Leather."
+		},
+
+		// Thread image not working; will work on this later
+		// "FantoThread": {
+		// 	"AllowValues": "true, false",
+		// 	"Default": "true",
+		// 	"Description": "Can recycle Ornate Fan into Thread."
+		// },
+		// "FeathertoThread": {
+		// 	"AllowValues": "true, false",
+		// 	"Default": "true",
+		// 	"Description": "Can recycle Duck Feather into Thread."
+		// },
+
+	},
+
+	// Content //////////////////////////////////////////////////////////
+
+	"Changes": [
+
+	// Load Object Textures //////////////////////////////////////////////////////////
+
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Objects",
+			"FromFile": "Objects.png"
+		},
+
+	// Add New Objects //////////////////////////////////////////////////////////
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_chain": {
+					"Name": "{{ModId}}_chain",
+					"DisplayName": "{{i18n:Si.chain.name}}",
+					"Description": "{{i18n:Si.chain.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 250,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"color_gray"
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_glass": {
+					"Name": "{{ModId}}_glass",
+					"DisplayName": "{{i18n:Si.glass.name}}",
+					"Description": "{{i18n:Si.glass.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 350,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 1,
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_glue": {
+					"Name": "{{ModId}}_glue",
+					"DisplayName": "{{i18n:Si.glue.name}}",
+					"Description": "{{i18n:Si.glue.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 1500,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 2,
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_paper": {
+					"Name": "{{ModId}}_paper",
+					"DisplayName": "{{i18n:Si.paper.name}}",
+					"Description": "{{i18n:Si.paper.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 5,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 3,
+					"ContextTags": [
+						"color_yellow"
+					],
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_rope": {
+					"Name": "{{ModId}}_rope",
+					"DisplayName": "{{i18n:Si.rope.name}}",
+					"Description": "{{i18n:Si.rope.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 3300,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 4,
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_string": {
+					"Name": "{{ModId}}_string",
+					"DisplayName": "{{i18n:Si.string.name}}",
+					"Description": "{{i18n:Si.string.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 150,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 5,
+				}
+			}
+		},
+
+		// Thread image isn't working for some reason
+		// I'll fix it later
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"Entries": {
+		// 		"{{ModId}}_thread": {
+		// 			"Name": "{{ModId}}_thread",
+		// 			"DisplayName": "{{i18n:Si.thread.name}}",
+		// 			"Description": "{{i18n:Si.thread.desc}}",
+		// 			"Type": "Basic",
+		// 			"Category": -26,
+		// 			"Price": 700,
+		// 			"Texture": "Mods/{{ModId}}/Objects",
+		// 			"SpriteIndex": 9,
+		// 		}
+		// 	}
+		// },
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_leather": {
+					"Name": "{{ModId}}_leather",
+					"DisplayName": "{{i18n:Si.leather.name}}",
+					"Description": "{{i18n:Si.leather.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 700,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 7,
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_fiberglass": {
+					"Name": "{{ModId}}_fiberglass",
+					"DisplayName": "{{i18n:Si.fiberglass.name}}",
+					"Description": "{{i18n:Si.fiberglass.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 2000,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 8,
+				}
+			}
+		},
+
+	// Add Crafting Rules //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Data/CraftingRecipes",
+		"Entries": {
+            "{{ModId}}_fiberglass": "771 1 (O){{ModId}}_glass 1 (O){{ModId}}_glue 1/Field/{{ModId}}_fiberglass/false/default/",
+        },
+	},
+
+	// Add Machine Rules //////////////////////////////////////////////////////////
+
+	// Chain
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}anchor_chain": {
+				"Id": "{{ModId}}anchor_chain",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)117",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_chain"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"AnchortoChain": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}iron_chain": {
+				"Id": "{{ModId}}iron_chain",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)335",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_chain"
+				}
+				],
+				"MinutesUntilReady": 2160
+			}
+        },
+		"When": {
+			"IrontoChain": true,
+		}
+	},
+
+	// Glass
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}shards_glass": {
+				"Id": "{{ModId}}shards_glass",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)118",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_glass"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"ShardstoGlass": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)13", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}glasses_glass": {
+				"Id": "{{ModId}}glasses_glass",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)170",
+						"RequiredCount": 10
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_glass"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"GlassestoGlass": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)13", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}obsid_glass": {
+				"Id": "{{ModId}}obsid_glass",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)575",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_glass"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"ObsidiantoGlass": true,
+		}
+	},
+
+	// Glue
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)13", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}bone_glue": {
+				"Id": "{{ModId}}bone_glue",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)881",
+						"RequiredCount": 20
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_glue"
+				}
+				],
+				"MinutesUntilReady": 2160
+			}
+        },
+		"When": {
+			"BonestoGlue": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)13", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}sap_glue": {
+				"Id": "{{ModId}}sap_glue",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)92",
+						"RequiredCount": 100
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_glue"
+				}
+				],
+				"MinutesUntilReady": 2160
+			}
+        },
+		"When": {
+			"SaptoGlue": true,
+		}
+	},
+
+	// Paper
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}scroll1_paper": {
+				"Id": "{{ModId}}scroll1_paper",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)96",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_paper"
+				}
+				],
+				"MinutesUntilReady": 120
+			}
+        },
+		"When": {
+			"ScrollstoPaper": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}scroll2_paper": {
+				"Id": "{{ModId}}scroll2_paper",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)97",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_paper"
+				}
+				],
+				"MinutesUntilReady": 120
+			}
+        },
+		"When": {
+			"ScrollstoPaper": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}scroll3_paper": {
+				"Id": "{{ModId}}scroll3_paper",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)98",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_paper"
+				}
+				],
+				"MinutesUntilReady": 120
+			}
+        },
+		"When": {
+			"ScrollstoPaper": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}scroll4_paper": {
+				"Id": "{{ModId}}scroll4_paper",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)99",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_paper"
+				}
+				],
+				"MinutesUntilReady": 120
+			}
+        },
+		"When": {
+			"ScrollstoPaper": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)90", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}wood_paper": {
+				"Id": "{{ModId}}wood_paper",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)388",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_paper"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"WoodtoPaper": true,
+		}
+	},
+
+	// Rope
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}hay_rope": {
+				"Id": "{{ModId}}hay_rope",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)178",
+						"RequiredCount": 50
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_rope"
+				}
+				],
+				"MinutesUntilReady": 5400
+			}
+        },
+		"When": {
+			"HaytoRope": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}jelly1_rope": {
+				"Id": "{{ModId}}jelly1_rope",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)SeaJelly",
+						"RequiredCount": 10
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_rope"
+				}
+				],
+				"MinutesUntilReady": 5400
+			}
+        },
+		"When": {
+			"JellytoRope": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}jelly2_rope": {
+				"Id": "{{ModId}}jelly2_rope",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)CaveJelly",
+						"RequiredCount": 10
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_rope"
+				}
+				],
+				"MinutesUntilReady": 5400
+			}
+        },
+		"When": {
+			"JellytoRope": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}jelly3_rope": {
+				"Id": "{{ModId}}jelly3_rope",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)RiverJelly",
+						"RequiredCount": 10
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_rope"
+				}
+				],
+				"MinutesUntilReady": 5400
+			}
+        },
+		"When": {
+			"JellytoRope": true,
+		}
+	},
+
+	// String
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}moss_string": {
+				"Id": "{{ModId}}moss_string",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)Moss",
+						"RequiredCount": 10
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_string"
+				}
+				],
+				"MinutesUntilReady": 2160
+			}
+        },
+		"When": {
+			"MosstoString": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}fiber_string": {
+				"Id": "{{ModId}}fiber_string",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)771",
+						"RequiredCount": 50
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_string"
+				}
+				],
+				"MinutesUntilReady": 2160
+			}
+        },
+		"When": {
+			"FibertoString": true,
+		}
+	},
+
+	// Leather
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}drum_leather": {
+				"Id": "{{ModId}}drum_leather",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)123",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_leather"
+				}
+				],
+				"MinutesUntilReady": 4320
+			}
+        },
+		"When": {
+			"DrumtoLeather": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)Dehydrator", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}bug_leather": {
+				"Id": "{{ModId}}bug_leather",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)684",
+						"RequiredCount": 10
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_leather"
+				}
+				],
+				"MinutesUntilReady": 4320
+			}
+        },
+		"When": {
+			"BugtoLeather": true,
+		}
+	},
+
+	// End //////////////////////////////////////////////////////////
+
+	]
+
+}
