@@ -60,6 +60,12 @@
 			"Description": "Can bone mill Wood into Paper."
 		},
 
+		"NewspapertoPaper": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can dehydrate Soggy Newspapers into Paper."
+		},
+
 		"HaytoRope": {
 			"AllowValues": "true, false",
 			"Default": "true",
@@ -96,6 +102,12 @@
 			"Description": "Can dehydrate Bug Meat into Leather."
 		},
 
+		"GadgettoMicrocontroller": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle Dwarf Gadget into Microcontroller."
+		},
+
 		// Thread image not working; will work on this later
 		// "FantoThread": {
 		// 	"AllowValues": "true, false",
@@ -121,6 +133,12 @@
 			"Action": "Load",
 			"Target": "Mods/{{ModId}}/Objects",
 			"FromFile": "Objects.png"
+		},
+
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/MC",
+			"FromFile": "Microcontroller.png"
 		},
 
 	// Add New Objects //////////////////////////////////////////////////////////
@@ -281,6 +299,23 @@
 					"Category": -26,
 					"Price": 2000,
 					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 8,
+				}
+			}
+		},
+
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_mc": {
+					"Name": "{{ModId}}_mc",
+					"DisplayName": "{{i18n:Si.mc.name}}",
+					"Description": "{{i18n:Si.mc.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 2000,
+					"Texture": "Mods/{{ModId}}/MC",
 					"SpriteIndex": 8,
 				}
 			}
@@ -617,6 +652,34 @@
 			"WoodtoPaper": true,
 		}
 	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)Dehydrator", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}newspaper_paper": {
+				"Id": "{{ModId}}newspaper_paper",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)172",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_paper",
+					"MinStack": 1,
+            		"MaxStack": 4,
+				}
+				],
+				"MinutesUntilReady": 540
+			}
+        },
+		"When": {
+			"WoodtoPaper": true,
+		}
+	},
 
 	// Rope
 	{
@@ -829,6 +892,34 @@
         },
 		"When": {
 			"BugtoLeather": true,
+		}
+	},
+
+	// Microcontroller
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}gadget_mc": {
+				"Id": "{{ModId}}gadget_mc",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)122",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_mc"
+				}
+				],
+				"MinutesUntilReady": 3240
+			}
+        },
+		"When": {
+			"GadgettoMicrocontroller": true,
 		}
 	},
 
