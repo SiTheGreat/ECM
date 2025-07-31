@@ -314,9 +314,9 @@
 					"Description": "{{i18n:Si.mc.desc}}",
 					"Type": "Basic",
 					"Category": -26,
-					"Price": 2000,
+					"Price": 5000,
 					"Texture": "Mods/{{ModId}}/MC",
-					"SpriteIndex": 8,
+					"SpriteIndex": 0,
 				}
 			}
 		},
