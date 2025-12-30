@@ -28,6 +28,8 @@
 	"config.StringtoRope.description": "Can loom String into Rope.",
 	"config.JellytoRope.name": "JellytoRope",
 	"config.JellytoRope.description": "Can loom Jelly into Rope.",
+	"config.RopetoString.name": "RopetoString",
+	"config.RopetoString.description": "Can recycle Rope into String.",
 	"config.MosstoString.name": "MosstoString",
 	"config.MosstoString.description": "Can loom Moss into String.",
 	"config.FibertoString.name": "FibertoString",

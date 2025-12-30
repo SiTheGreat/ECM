@@ -96,6 +96,12 @@
 			"Description": "Can loom Jelly into Rope."
 		},
 
+		"RopetoString": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle Rope into String."
+		},
+
 		"MosstoString": {
 			"AllowValues": "true, false",
 			"Default": "true",
@@ -1015,6 +1021,34 @@
         },
 		"When": {
 			"FibertoString": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}rope_string": {
+				"Id": "{{ModId}}rope_string",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_rope",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_string",
+					"MinStack": 8,
+            		"MaxStack": 10,
+				}
+				],
+				"MinutesUntilReady": 2160
+			}
+        },
+		"When": {
+			"RopetoString": true,
 		}
 	},
 
