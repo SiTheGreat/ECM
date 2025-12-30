@@ -108,17 +108,16 @@
 			"Description": "Can recycle Dwarf Gadget into Microcontroller."
 		},
 
-		// Thread image not working; will work on this later
-		// "FantoThread": {
-		// 	"AllowValues": "true, false",
-		// 	"Default": "true",
-		// 	"Description": "Can recycle Ornate Fan into Thread."
-		// },
-		// "FeathertoThread": {
-		// 	"AllowValues": "true, false",
-		// 	"Default": "true",
-		// 	"Description": "Can recycle Duck Feather into Thread."
-		// },
+		"FantoThread": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle Ornate Fan into Thread."
+		},
+		"FeathertoThread": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can recycle Duck Feather into Thread."
+		},
 
 	},
 
@@ -251,24 +250,22 @@
 			}
 		},
 
-		// Thread image isn't working for some reason
-		// I'll fix it later
-		// {
-		// 	"Action": "EditData",
-		// 	"Target": "Data/Objects",
-		// 	"Entries": {
-		// 		"{{ModId}}_thread": {
-		// 			"Name": "{{ModId}}_thread",
-		// 			"DisplayName": "{{i18n:Si.thread.name}}",
-		// 			"Description": "{{i18n:Si.thread.desc}}",
-		// 			"Type": "Basic",
-		// 			"Category": -26,
-		// 			"Price": 700,
-		// 			"Texture": "Mods/{{ModId}}/Objects",
-		// 			"SpriteIndex": 9,
-		// 		}
-		// 	}
-		// },
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_thread": {
+					"Name": "{{ModId}}_thread",
+					"DisplayName": "{{i18n:Si.thread.name}}",
+					"Description": "{{i18n:Si.thread.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 700,
+					"Texture": "Mods/{{ModId}}/Objects",
+					"SpriteIndex": 6,
+				}
+			}
+		},
 
 		{
 			"Action": "EditData",
@@ -920,6 +917,60 @@
         },
 		"When": {
 			"GadgettoMicrocontroller": true,
+		}
+	},
+
+	// Thread
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}fan_thread": {
+				"Id": "{{ModId}}fan_thread",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)106",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_thread"
+				}
+				],
+				"MinutesUntilReady": 2160
+			}
+        },
+		"When": {
+			"FantoThread": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)20", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}feather_thread": {
+				"Id": "{{ModId}}feather_thread",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)444",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_thread"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"FeathertoThread": true,
 		}
 	},
 

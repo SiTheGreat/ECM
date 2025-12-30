@@ -34,6 +34,10 @@
 	"config.BugtoLeather.description": "Can dehydrate Bug Meat into Leather.",
 	"config.GadgettoMicrocontroller.name": "GadgettoMicrocontroller",
 	"config.GadgettoMicrocontroller.description": "Can recycle Dwarf Gadget into Microcontroller.",
+	"config.FantoThread.name": "FantoThread",
+	"config.FantoThread.description": "Can recycle Ornamental Fan into Thread.",
+	"config.FeathertoThread.name": "FeathertoThread",
+	"config.FeathertoThread.description": "Can recycle Duck Feather into Thread.",
 	// Items
 	"Si.chain.name": "Chain",
 	"Si.chain.desc": "A clanking metal chain.",
