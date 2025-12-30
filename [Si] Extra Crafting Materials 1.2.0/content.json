@@ -36,6 +36,18 @@
 			"Description": "Can furnace Obsidian into Glass."
 		},
 
+		"QuartztoGlassShards": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can bone mill Quartz into Glass Shards."
+		},
+
+		"FireQuartztoGlassShards": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can bone mill Fire Quartz into Glass Shards."
+		},
+
 		"BonestoGlue": {
 			"AllowValues": "true, false",
 			"Default": "true",
@@ -70,6 +82,12 @@
 			"AllowValues": "true, false",
 			"Default": "true",
 			"Description": "Can loom Hay into Rope."
+		},
+
+		"StringtoRope": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can loom String into Rope."
 		},
 
 		"JellytoRope": {
@@ -119,18 +137,6 @@
 			"Default": "true",
 			"Description": "Can recycle Duck Feather into Thread."
 		},
-
-		"QuartztoGlassShards": {
-			"AllowValues": "true, false",
-			"Default": "true",
-			"Description": "Can bone mill Quartz into Glass Shards."
-		},
-
-		"FireQuartztoGlassShards": {
-			"AllowValues": "true, false",
-			"Default": "true",
-			"Description": "Can bone mill Fire Quartz into Glass Shards."
-		},
 	},
 
 	// Content //////////////////////////////////////////////////////////
@@ -151,6 +157,20 @@
 			"Target": "Mods/{{ModId}}/MC",
 			"FromFile": "Microcontroller.png"
 		},
+
+		// Placeholder; sprite not made yet
+		// {
+		// 	"Action": "Load",
+		// 	"Target": "Mods/{{ModId}}/Tape",
+		// 	"FromFile": "Tape.png"
+		// },
+
+		// Placeholder; sprite not made yet
+		// {
+		// 	"Action": "Load",
+		// 	"Target": "Mods/{{ModId}}/DuctTape",
+		// 	"FromFile": "DuctTape.png"
+		// },
 
 	// Add New Objects //////////////////////////////////////////////////////////
 
@@ -234,21 +254,42 @@
 			}
 		},
 
+		// Placeholder; sprite not made yet
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"Entries": {
+		// 		"{{ModId}}_tape": {
+		// 			"Name": "{{ModId}}_tape",
+		// 			"DisplayName": "{{i18n:Si.tape.name}}",
+		// 			"Description": "{{i18n:Si.tape.desc}}",
+		// 			"Type": "Basic",
+		// 			"Category": -26,
+		// 			"Price": 20,
+		// 			"Texture": "Mods/{{ModId}}/Tape",
+		// 			"SpriteIndex": 0,
+		// 			"ContextTags": [
+		// 				"item_tape",
+		// 			],
+		// 		}
+		// 	}
+		// },
+
 		{
 			"Action": "EditData",
 			"Target": "Data/Objects",
 			"Entries": {
-				"{{ModId}}_rope": {
-					"Name": "{{ModId}}_rope",
-					"DisplayName": "{{i18n:Si.rope.name}}",
-					"Description": "{{i18n:Si.rope.desc}}",
+				"{{ModId}}_thread": {
+					"Name": "{{ModId}}_thread",
+					"DisplayName": "{{i18n:Si.thread.name}}",
+					"Description": "{{i18n:Si.thread.desc}}",
 					"Type": "Basic",
 					"Category": -26,
-					"Price": 3300,
+					"Price": 700,
 					"Texture": "Mods/{{ModId}}/Objects",
-					"SpriteIndex": 4,
+					"SpriteIndex": 6,
 					"ContextTags": [
-						"item_rope",
+						"item_thread",
 					],
 				}
 			}
@@ -278,17 +319,17 @@
 			"Action": "EditData",
 			"Target": "Data/Objects",
 			"Entries": {
-				"{{ModId}}_thread": {
-					"Name": "{{ModId}}_thread",
-					"DisplayName": "{{i18n:Si.thread.name}}",
-					"Description": "{{i18n:Si.thread.desc}}",
+				"{{ModId}}_rope": {
+					"Name": "{{ModId}}_rope",
+					"DisplayName": "{{i18n:Si.rope.name}}",
+					"Description": "{{i18n:Si.rope.desc}}",
 					"Type": "Basic",
 					"Category": -26,
-					"Price": 700,
+					"Price": 3300,
 					"Texture": "Mods/{{ModId}}/Objects",
-					"SpriteIndex": 6,
+					"SpriteIndex": 4,
 					"ContextTags": [
-						"item_thread",
+						"item_rope",
 					],
 				}
 			}
@@ -313,6 +354,27 @@
 				}
 			}
 		},
+
+		// Placeholder; sprite not made yet
+		// {
+		// 	"Action": "EditData",
+		// 	"Target": "Data/Objects",
+		// 	"Entries": {
+		// 		"{{ModId}}_ducttape": {
+		// 			"Name": "{{ModId}}_ducttape",
+		// 			"DisplayName": "{{i18n:Si.ducttape.name}}",
+		// 			"Description": "{{i18n:Si.ducttape.desc}}",
+		// 			"Type": "Basic",
+		// 			"Category": -26,
+		// 			"Price": 600,
+		// 			"Texture": "Mods/{{ModId}}/DuctTape",
+		// 			"SpriteIndex": 0,
+		// 			"ContextTags": [
+		// 				"item_ducttape",
+		// 			],
+		// 		}
+		// 	}
+		// },
 
 		{
 			"Action": "EditData",
@@ -361,7 +423,176 @@
 		"Action": "EditData",
 		"Target": "Data/CraftingRecipes",
 		"Entries": {
+			"{{ModId}}_thread": "(O){{ModId}}_string 1/Field/{{ModId}}_thread 5/false/default/",
+			"{{ModId}}_string": "(O){{ModId}}_thread 5/Field/{{ModId}}_string/false/default/",
+			// "{{ModId}}_tape": "(O){{ModId}}_paper 1 (O){{ModId}}_glue 1/Field/{{ModId}}_tape/false/default/", // Placeholder; sprite not made yet
             "{{ModId}}_fiberglass": "771 1 (O){{ModId}}_glass 1 (O){{ModId}}_glue 1/Field/{{ModId}}_fiberglass/false/default/",
+        },
+	},
+
+	// Add Deconstructor Rules //////////////////////////////////////////////////////////
+
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)265", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}deconstruct_chain": {
+				"Id": "{{ModId}}deconstruct_chain",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_chain",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)335"
+				}
+				],
+				"MinutesUntilReady": 60
+			}
+        },
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)265", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}deconstruct_glass": {
+				"Id": "{{ModId}}deconstruct_glass",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_glass",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)118"
+				}
+				],
+				"MinutesUntilReady": 60
+			}
+        },
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)265", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}deconstruct_glue": {
+				"Id": "{{ModId}}deconstruct_glue",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_glue",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)881",
+					"MinStack": 3,
+            		"MaxStack": 6,
+				}
+				],
+				"MinutesUntilReady": 60
+			}
+        },
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)265", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}deconstruct_paper": {
+				"Id": "{{ModId}}deconstruct_paper",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_paper",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)388"
+				}
+				],
+				"MinutesUntilReady": 60
+			}
+        },
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)265", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}deconstruct_rope": {
+				"Id": "{{ModId}}deconstruct_rope",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_rope",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_string"
+				}
+				],
+				"MinutesUntilReady": 270
+			}
+        },
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)265", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}deconstruct_leather": {
+				"Id": "{{ModId}}deconstruct_leather",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_leather",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)684"
+				}
+				],
+				"MinutesUntilReady": 60
+			}
+        },
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)265", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}deconstruct_mc": {
+				"Id": "{{ModId}}deconstruct_mc",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_mc",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)787"
+				}
+				],
+				"MinutesUntilReady": 270
+			}
         },
 	},
 
@@ -799,6 +1030,32 @@
 		"Target": "Data/Machines",
 		"TargetField": [ "(BC)17", "OutputRules" ],
 		"Entries": {
+            "{{ModId}}string_rope": {
+				"Id": "{{ModId}}string_rope",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O){{ModId}}_string",
+						"RequiredCount": 10
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O){{ModId}}_rope"
+				}
+				],
+				"MinutesUntilReady": 2700
+			}
+        },
+		"When": {
+			"StringtoRope": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)17", "OutputRules" ],
+		"Entries": {
             "{{ModId}}jelly1_rope": {
 				"Id": "{{ModId}}jelly1_rope",
 				"Triggers": [
@@ -1078,6 +1335,25 @@
 			"FeathertoThread": true,
 		}
 	},
+
+	// Duct Tape
+	// Placeholder; sprite not made yet
+	// {
+	// 	"Action": "EditData",
+	// 	"Target": "Data/TailoringRecipes",
+	// 	"Entries": {
+	// 		"{{ModId}}sew_ducttape": {
+	// 			"Id": "{{ModId}}sew_ducttape",
+	// 			"FirstItemTags": [
+	// 				"item_tape"
+	// 			],
+	// 			"SecondItemTags": [
+	// 				"item_duck_feather"
+	// 			],
+	// 			"CraftedItemId": "(O){{ModId}}_ducttape",
+	// 		},
+	// 	}
+	// },
 
 	// End //////////////////////////////////////////////////////////
 

@@ -1,9 +1,9 @@
 {
 	// Config
 	"config.AnchortoChain.name": "AnchortoChain",
-	"config.AnchortoChain.description": "Can recycle an Anchor into a Chain.",
+	"config.AnchortoChain.description": "Can recycle Anchor into Chain.",
 	"config.IrontoChain.name": "IrontoChain",
-	"config.IrontoChain.description": "Can loom an Iron Bar into a Chain.",
+	"config.IrontoChain.description": "Can loom Iron Bar into Chain.",
 	"config.ShardstoGlass.name": "ShardstoGlass",
 	"config.ShardstoGlass.description": "Can recycle Glass Shards into Glass.",
 	"config.GlassestoGlass.name": "GlassestoGlass",
@@ -24,6 +24,8 @@
 	"config.NewspapertoPaper.description": "Can dehydrate Soggy Newspapers into Paper.",
 	"config.HaytoRope.name": "HaytoRope",
 	"config.HaytoRope.description": "Can loom Hay into Rope.",
+	"config.StringtoRope.name": "StringtoRope",
+	"config.StringtoRope.description": "Can loom String into Rope.",
 	"config.JellytoRope.name": "JellytoRope",
 	"config.JellytoRope.description": "Can loom Jelly into Rope.",
 	"config.MosstoString.name": "MosstoString",
