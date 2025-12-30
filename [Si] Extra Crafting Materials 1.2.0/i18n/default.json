@@ -59,4 +59,8 @@
 	"Si.leather.desc": "A bolt of bug leather.",
 	"Si.mc.name": "Microcontroller",
 	"Si.mc.desc": "A fragile computer chip.",
+	"Si.tape.name": "Tape",
+	"Si.tape.desc": "A sticky roll of tape.",
+	"Si.ducttape.name": "Duct Tape",
+	"Si.ducttape.desc": "A reinforced roll of tape.",
 }
