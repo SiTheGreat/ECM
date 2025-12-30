@@ -156,7 +156,7 @@
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 0,
 					"ContextTags": [
-						"color_gray"
+						"item_chain",
 					],
 				}
 			}
@@ -175,6 +175,9 @@
 					"Price": 350,
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 1,
+					"ContextTags": [
+						"item_glass",
+					],
 				}
 			}
 		},
@@ -192,6 +195,9 @@
 					"Price": 1500,
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 2,
+					"ContextTags": [
+						"item_glue",
+					],
 				}
 			}
 		},
@@ -210,7 +216,7 @@
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 3,
 					"ContextTags": [
-						"color_yellow"
+						"item_paper",
 					],
 				}
 			}
@@ -229,6 +235,9 @@
 					"Price": 3300,
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 4,
+					"ContextTags": [
+						"item_rope",
+					],
 				}
 			}
 		},
@@ -246,6 +255,9 @@
 					"Price": 150,
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 5,
+					"ContextTags": [
+						"item_string",
+					],
 				}
 			}
 		},
@@ -263,6 +275,9 @@
 					"Price": 700,
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 6,
+					"ContextTags": [
+						"item_thread",
+					],
 				}
 			}
 		},
@@ -280,6 +295,9 @@
 					"Price": 700,
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 7,
+					"ContextTags": [
+						"item_leather",
+					],
 				}
 			}
 		},
@@ -297,6 +315,9 @@
 					"Price": 2000,
 					"Texture": "Mods/{{ModId}}/Objects",
 					"SpriteIndex": 8,
+					"ContextTags": [
+						"item_fiberglass",
+					],
 				}
 			}
 		},
@@ -314,6 +335,10 @@
 					"Price": 5000,
 					"Texture": "Mods/{{ModId}}/MC",
 					"SpriteIndex": 0,
+					"ContextTags": [
+						"item_mc",
+						"item_microcontroller",
+					],
 				}
 			}
 		},
@@ -422,7 +447,7 @@
 					{
 						"Trigger": "ItemPlacedInMachine",
 						"RequiredItemId": "(O)170",
-						"RequiredCount": 10
+						"RequiredCount": 5
 					}
 				],
 				"OutputItem": [
