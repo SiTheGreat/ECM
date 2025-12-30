@@ -113,12 +113,24 @@
 			"Default": "true",
 			"Description": "Can recycle Ornate Fan into Thread."
 		},
+
 		"FeathertoThread": {
 			"AllowValues": "true, false",
 			"Default": "true",
 			"Description": "Can recycle Duck Feather into Thread."
 		},
 
+		"QuartztoGlassShards": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can bone mill Quartz into Glass Shards."
+		},
+
+		"FireQuartztoGlassShards": {
+			"AllowValues": "true, false",
+			"Default": "true",
+			"Description": "Can bone mill Fire Quartz into Glass Shards."
+		},
 	},
 
 	// Content //////////////////////////////////////////////////////////
@@ -486,6 +498,58 @@
         },
 		"When": {
 			"ObsidiantoGlass": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)90", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}quartz_glassshards": {
+				"Id": "{{ModId}}quartz_glassshards",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)80",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)118"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"QuartztoGlassShards": true,
+		}
+	},
+	{
+		"Action": "EditData",
+		"Target": "Data/Machines",
+		"TargetField": [ "(BC)90", "OutputRules" ],
+		"Entries": {
+            "{{ModId}}firequartz_glassshards": {
+				"Id": "{{ModId}}firequartz_glassshards",
+				"Triggers": [
+					{
+						"Trigger": "ItemPlacedInMachine",
+						"RequiredItemId": "(O)82",
+						"RequiredCount": 1
+					}
+				],
+				"OutputItem": [
+				{
+					"ItemId": "(O)118"
+				}
+				],
+				"MinutesUntilReady": 1080
+			}
+        },
+		"When": {
+			"FireQuartztoGlassShards": true,
 		}
 	},
 
