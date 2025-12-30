@@ -2,7 +2,7 @@
 	"Name": "[Si] Extra Crafting Materials",
 	"Author": "SiTheGreat",
 	"Description": "Extra crafting materials.",
-	"Version": "1.1.0",
+	"Version": "1.2.0",
 	"UniqueID": "Si.ECM",
 	"UpdateKeys": [ "Nexus:25467" ],
 	"ContentPackFor": {
