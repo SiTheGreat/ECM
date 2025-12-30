@@ -944,6 +944,22 @@
 			"GadgettoMicrocontroller": true,
 		}
 	},
+	{
+		"Action": "EditData",
+		"Target": "Data/TailoringRecipes",
+		"Entries": {
+			"{{ModId}}sew_mc": {
+				"Id": "{{ModId}}sew_mc",
+				"FirstItemTags": [
+					"item_battery_pack"
+				],
+				"SecondItemTags": [
+					"item_refined_quartz"
+				],
+				"CraftedItemId": "(O){{ModId}}_mc",
+			},
+		}
+	},
 
 	// Thread
 	{

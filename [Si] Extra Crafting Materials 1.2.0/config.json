@@ -1,0 +1,21 @@
+{
+  "AnchortoChain": "true",
+  "IrontoChain": "true",
+  "ShardstoGlass": "true",
+  "GlassestoGlass": "true",
+  "ObsidiantoGlass": "true",
+  "BonestoGlue": "true",
+  "SaptoGlue": "true",
+  "ScrollstoPaper": "true",
+  "WoodtoPaper": "true",
+  "NewspapertoPaper": "true",
+  "HaytoRope": "true",
+  "JellytoRope": "true",
+  "MosstoString": "true",
+  "FibertoString": "true",
+  "DrumtoLeather": "true",
+  "BugtoLeather": "true",
+  "GadgettoMicrocontroller": "true",
+  "FantoThread": "true",
+  "FeathertoThread": "true"
+}
