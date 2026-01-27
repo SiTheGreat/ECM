@@ -164,19 +164,11 @@
 			"FromFile": "Microcontroller.png"
 		},
 
-		// Placeholder; sprite not made yet
-		// {
-		// 	"Action": "Load",
-		// 	"Target": "Mods/{{ModId}}/Tape",
-		// 	"FromFile": "Tape.png"
-		// },
-
-		// Placeholder; sprite not made yet
-		// {
-		// 	"Action": "Load",
-		// 	"Target": "Mods/{{ModId}}/DuctTape",
-		// 	"FromFile": "DuctTape.png"
-		// },
+		{
+			"Action": "Load",
+			"Target": "Mods/{{ModId}}/Tape",
+			"FromFile": "Tape.png"
+		},
 
 	// Add New Objects //////////////////////////////////////////////////////////
 
@@ -260,26 +252,25 @@
 			}
 		},
 
-		// Placeholder; sprite not made yet
-		// {
-		// 	"Action": "EditData",
-		// 	"Target": "Data/Objects",
-		// 	"Entries": {
-		// 		"{{ModId}}_tape": {
-		// 			"Name": "{{ModId}}_tape",
-		// 			"DisplayName": "{{i18n:Si.tape.name}}",
-		// 			"Description": "{{i18n:Si.tape.desc}}",
-		// 			"Type": "Basic",
-		// 			"Category": -26,
-		// 			"Price": 20,
-		// 			"Texture": "Mods/{{ModId}}/Tape",
-		// 			"SpriteIndex": 0,
-		// 			"ContextTags": [
-		// 				"item_tape",
-		// 			],
-		// 		}
-		// 	}
-		// },
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_tape": {
+					"Name": "{{ModId}}_tape",
+					"DisplayName": "{{i18n:Si.tape.name}}",
+					"Description": "{{i18n:Si.tape.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 20,
+					"Texture": "Mods/{{ModId}}/Tape",
+					"SpriteIndex": 0,
+					"ContextTags": [
+						"item_tape",
+					],
+				}
+			}
+		},
 
 		{
 			"Action": "EditData",
@@ -361,26 +352,25 @@
 			}
 		},
 
-		// Placeholder; sprite not made yet
-		// {
-		// 	"Action": "EditData",
-		// 	"Target": "Data/Objects",
-		// 	"Entries": {
-		// 		"{{ModId}}_ducttape": {
-		// 			"Name": "{{ModId}}_ducttape",
-		// 			"DisplayName": "{{i18n:Si.ducttape.name}}",
-		// 			"Description": "{{i18n:Si.ducttape.desc}}",
-		// 			"Type": "Basic",
-		// 			"Category": -26,
-		// 			"Price": 600,
-		// 			"Texture": "Mods/{{ModId}}/DuctTape",
-		// 			"SpriteIndex": 0,
-		// 			"ContextTags": [
-		// 				"item_ducttape",
-		// 			],
-		// 		}
-		// 	}
-		// },
+		{
+			"Action": "EditData",
+			"Target": "Data/Objects",
+			"Entries": {
+				"{{ModId}}_ducttape": {
+					"Name": "{{ModId}}_ducttape",
+					"DisplayName": "{{i18n:Si.ducttape.name}}",
+					"Description": "{{i18n:Si.ducttape.desc}}",
+					"Type": "Basic",
+					"Category": -26,
+					"Price": 600,
+					"Texture": "Mods/{{ModId}}/Tape",
+					"SpriteIndex": 1,
+					"ContextTags": [
+						"item_ducttape",
+					],
+				}
+			}
+		},
 
 		{
 			"Action": "EditData",
@@ -431,7 +421,7 @@
 		"Entries": {
 			"{{ModId}}_thread": "(O){{ModId}}_string 1/Field/{{ModId}}_thread 5/false/default/",
 			"{{ModId}}_string": "(O){{ModId}}_thread 5/Field/{{ModId}}_string/false/default/",
-			// "{{ModId}}_tape": "(O){{ModId}}_paper 1 (O){{ModId}}_glue 1/Field/{{ModId}}_tape/false/default/", // Placeholder; sprite not made yet
+			"{{ModId}}_tape": "(O){{ModId}}_paper 1 (O){{ModId}}_glue 1/Field/{{ModId}}_tape/false/default/",
             "{{ModId}}_fiberglass": "771 1 (O){{ModId}}_glass 1 (O){{ModId}}_glue 1/Field/{{ModId}}_fiberglass/false/default/",
         },
 	},
@@ -1205,23 +1195,22 @@
 	},
 
 	// Duct Tape
-	// Placeholder; sprite not made yet
-	// {
-	// 	"Action": "EditData",
-	// 	"Target": "Data/TailoringRecipes",
-	// 	"Entries": {
-	// 		"{{ModId}}sew_ducttape": {
-	// 			"Id": "{{ModId}}sew_ducttape",
-	// 			"FirstItemTags": [
-	// 				"item_tape"
-	// 			],
-	// 			"SecondItemTags": [
-	// 				"item_duck_feather"
-	// 			],
-	// 			"CraftedItemId": "(O){{ModId}}_ducttape",
-	// 		},
-	// 	}
-	// },
+	{
+		"Action": "EditData",
+		"Target": "Data/TailoringRecipes",
+		"Entries": {
+			"{{ModId}}sew_ducttape": {
+				"Id": "{{ModId}}sew_ducttape",
+				"FirstItemTags": [
+					"item_tape"
+				],
+				"SecondItemTags": [
+					"item_duck_feather"
+				],
+				"CraftedItemId": "(O){{ModId}}_ducttape",
+			},
+		}
+	},
 
 	// End //////////////////////////////////////////////////////////
 
